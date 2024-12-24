@@ -1,16 +1,87 @@
-# The URL the site will be built for
+# Basic configuration
 base_url = "https://cyclearchive.com"
-
-# Whether to automatically compile all Sass files in the sass directory
+title = "Cycle Archive"
+description = "A blog about cycling, technology, and life."
+default_language = "en"
+output_dir = "public"
 compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
+minify_html = true
+build_search_index = false            # Keep this false, search is temporarily unsupported
+generate_feeds = false                # Whether to generate a feed file in root, read docs for more info about rss feed
+feed_filenames = ["feed.xml"]         # The file name of feed, "feed.xml" / "atom.xml" / "rss.xml", read docs for more info
+taxonomies = [{ name = "tags" }, { name = "categories" }]
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = false
+highlight_code = true
+highlight_theme = "css"
+extra_syntaxes_and_themes = ["highlight_themes"]
+highlight_themes_css = [
+    { theme = "serene-light", filename = "hl-light.css"},
+    { theme = "serene-dark", filename = "hl-dark.css"},
+]
+render_emoji = false
+external_links_target_blank = false
+external_links_no_follow = true
+external_links_no_referrer = true
+smart_punctuation = false
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
 
 [extra]
-# Put all your custom variables here
+name = "Cycle Archive"
+id = "Cycle Archive"
+bio = "something hre"
+avatar = "img/avatar.png"
+
+display_id = false
+display_bio = true
+display_avatar = true
+
+recent = false
+recent_max = 5
+recent_more_text = "more »"
+
+sections = [
+    { name = "magazines", path = "/magazines", is_external = false },
+    { name = "about", path = "/about", is_external = false },
+    { name = "projects", path = "/projects", is_external = false },
+    # { name = "github", path = "https://github.com/<your-username>", is_external = true },
+]
+blog_section_path = "/magazines"
+
+links = [
+    #{ name = "GitHub", icon = "github", url = "https://github.com/<your-username>" },
+    #{ name = "Twitter", icon = "twitter", url = "https://twitter.com/<your-username>" },
+    #{ name = "Email", icon = "email", url = "mailto:<your-email-address>" },
+]
+
+force_theme = false                  # false | "light" | "dark"
+blog_categorized = true               # Whether to categorize blog posts
+blur_effect = false                   # Whether to turn on blur effect on navigation bar
+back_to_top = true                    # Whether to show back-to-top button on post pages
+toc = true                            # Whether to show Table-of-Contents by default
+copy = true                           # Whether to add a copy button on code blocks by default
+display_tags = true                   # Whether to display tags on post pages by default
+truncate_summary = false              # Whether to truncate the summary of a post by default
+comment = false                       # Whether to show giscus comment section by default, see https://giscus.app for more info
+
+reaction = false                      # Whether to show anonymous reactions (Note: You need to set up a working api endpoint to enable anonymous reaction)
+reaction_align = "right"              # "left" | "center" | "right"
+reaction_endpoint = "https://example.com/api/reaction"
+
+outdate_alert = false                 # Whether to show outdate alert by default
+outdate_alert_days = 120              # How many days will a post be outdated by default
+outdate_alert_text_before = "This article was last updated "
+outdate_alert_text_after = " days ago and may be out of date."
+
+nav_separator = "::"
+nav_wrapper_left = "{"
+nav_wrapper_right = "} ;"
+nav_wrapper_separator = ","
+
+footer_copyright = "© 2024 Creative Data Technologies"
+footer_credits = true                 # Whether to show "powered by zola and serene" in footer
+

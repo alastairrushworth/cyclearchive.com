@@ -1,0 +1,20 @@
+{% extends "_base.html" %}
+{% block page %}homepage{% endblock page %}
+{% block content %}
+{% include "_header.html" %}
+
+<div id="wrapper">
+    <div id="blank"></div>
+    <main class="list">
+        <h1>{{ section.title }}</h1>
+        {% for subsection_path in section.subsections %}
+        {% set sub = get_section(path=subsection_path) %}
+        <div class="post-entry">
+            <a href="{{ sub.path }}" class="post">
+                <div class="name">{{ sub.title }}</div>
+            </a>
+        </div>
+        {% endfor %}
+    </main>
+</div>
+{% endblock content %}

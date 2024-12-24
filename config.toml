@@ -33,7 +33,7 @@ anchors = "on"
 [extra]
 name = "Cycle Archive"
 id = "Cycle Archive"
-bio = "something hre"
+bio = "A historical archive of cycling magazines and books"
 avatar = "img/avatar.png"
 
 display_id = false
@@ -47,8 +47,6 @@ recent_more_text = "more »"
 sections = [
     { name = "magazines", path = "/magazines", is_external = false },
     { name = "about", path = "/about", is_external = false },
-    { name = "projects", path = "/projects", is_external = false },
-    # { name = "github", path = "https://github.com/<your-username>", is_external = true },
 ]
 blog_section_path = "/magazines"
 

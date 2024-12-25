@@ -2,18 +2,20 @@
 {% extends "_base.html" %}
 
 {% block page %}homepage{% endblock page%}
-{% block lang %}{% if section.extra.lang %}{{ section.extra.lang }}{% else %}{{ section.lang }}{% endif %}{% endblock lang %}
+{% block lang %}{% if section.extra.lang %}{{ section.extra.lang }}{% else %}{{ section.lang }}{% endif %}{% endblock
+lang %}
 {% block title %}{{ config.title }}{% endblock title %}
 {% block desc %}
-  <meta name="description" content="{{ config.description }}">
+<meta name="description" content="{{ config.description }}">
 {% endblock desc %}
 
 {% block head %}
 {% if config.markdown.highlight_theme == "css" %}
-<link id="hl" rel="stylesheet" type="text/css" href="/hl-{% if config.extra.force_theme == "dark" %}dark{% else %}light{% endif %}.css" />
+<link id="hl" rel="stylesheet" type="text/css" href="/hl-{% if config.extra.force_theme == " dark" %}dark{% else
+  %}light{% endif %}.css" />
 {% endif %}
 {% if section.extra.math %}
-  {{ macro_math::math_render(style = section.extra.math) }}
+{{ macro_math::math_render(style = section.extra.math) }}
 {% endif %}
 {% endblock head %}
 
@@ -39,7 +41,8 @@
     <section id="links">
       <div id="left">
         {% for section in config.extra.sections %}
-        <a href="{{ section.path }}" {% if section.is_external %}target="_blank" rel='noreferrer noopener'{% else %}class="instant"{% endif %}>{{ section.name }}</a>
+        <a href="{{ get_url(path=section.path) }}" {% if section.is_external %}target="_blank" rel='noreferrer noopener'
+          {% else %}class="instant" {% endif %}>{{ section.name }}</a>
         {% endfor %}
       </div>
       <div id="right">
@@ -50,37 +53,37 @@
           {{ icon | safe }}
         </a>
         {% endfor %}
-		    {% if not config.extra.force_theme %}
+        {% if not config.extra.force_theme %}
         {% set moon_icon = load_data(path="static/icon/moon.svg") %}
         {% set sun_icon = load_data(path="static/icon/sun.svg") %}
         <button id="theme-toggle" aria-label="theme switch">
           <span class="moon-icon">{{ moon_icon | safe }}</span>
           <span class="sun-icon">{{ sun_icon | safe }}</span>
         </button>
-		    {% endif %}
+        {% endif %}
       </div>
     </section>
-      <section id="brief" class="prose">
-        {{ section.content | trim | safe }}
-      </section>
+    <section id="brief" class="prose">
+      {{ section.content | trim | safe }}
+    </section>
     {% if config.extra.recent %}
-      {% set blog_section_path = config.extra.blog_section_path | trim_start_matches(pat="/") %}
-      {% set section_md_path = blog_section_path ~ "/_index.md" %}
-      {% set blog_section = get_section(path=section_md_path) %}
-      <section class="layout-list">
-        <div class="post-list">
-          {% for post in blog_section.pages | slice(end=config.extra.recent_max) %}
-          <a class="post instant {% if post.extra.featured %}featured{% endif %}" href="{{ post.permalink }}">
-            <span>{{ post.title }}</span>
-            <span class="line"></span>
-            <span class="date">{{ post.date | date}}</span>
-          </a>
-          {% endfor %}
-        </div>
-        <div class="read-more">
-          <a class="instant" href="{{ config.extra.blog_section_path }}">{{ config.extra.recent_more_text }}</a>
-        </div>
-      </section>
+    {% set blog_section_path = config.extra.blog_section_path | trim_start_matches(pat="/") %}
+    {% set section_md_path = blog_section_path ~ "/_index.md" %}
+    {% set blog_section = get_section(path=section_md_path) %}
+    <section class="layout-list">
+      <div class="post-list">
+        {% for post in blog_section.pages | slice(end=config.extra.recent_max) %}
+        <a class="post instant {% if post.extra.featured %}featured{% endif %}" href="{{ post.permalink }}">
+          <span>{{ post.title }}</span>
+          <span class="line"></span>
+          <span class="date">{{ post.date | date}}</span>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="read-more">
+        <a class="instant" href="{{ config.extra.blog_section_path }}">{{ config.extra.recent_more_text }}</a>
+      </div>
+    </section>
     {% endif %}
   </main>
 </div>

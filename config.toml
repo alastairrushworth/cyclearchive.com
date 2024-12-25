@@ -3,10 +3,10 @@ base_url = "https://cyclearchive.com"
 title = "Cycle Archive"
 description = "A blog about cycling, technology, and life."
 default_language = "en"
-output_dir = "public"
 compile_sass = true
 minify_html = true
 build_search_index = false            # Keep this false, search is temporarily unsupported
+output_dir = "public"
 generate_feeds = false                # Whether to generate a feed file in root, read docs for more info about rss feed
 feed_filenames = ["feed.xml"]         # The file name of feed, "feed.xml" / "atom.xml" / "rss.xml", read docs for more info
 taxonomies = [{ name = "tags" }, { name = "categories" }]
@@ -34,7 +34,7 @@ anchors = "on"
 name = "Cycle Archive"
 id = "Cycle Archive"
 bio = "A historical archive of cycling magazines and books"
-avatar = "img/avatar.png"
+avatar = "/img/avatar.png"
 
 display_id = false
 display_bio = true

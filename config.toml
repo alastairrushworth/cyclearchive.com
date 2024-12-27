@@ -35,6 +35,7 @@ name = "Cycle Archive"
 id = "Cycle Archive"
 bio = "A historical archive of cycling magazines and books"
 avatar = "/img/avatar.png"
+google_analytics = 'G-2B1XW3N73G'
 
 display_id = false
 display_bio = true
@@ -56,7 +57,7 @@ links = [
     #{ name = "Email", icon = "email", url = "mailto:<your-email-address>" },
 ]
 
-force_theme = false                  # false | "light" | "dark"
+force_theme = "light"                  # false | "light" | "dark"
 blog_categorized = true               # Whether to categorize blog posts
 blur_effect = false                   # Whether to turn on blur effect on navigation bar
 back_to_top = true                    # Whether to show back-to-top button on post pages
@@ -80,6 +81,6 @@ nav_wrapper_left = "{"
 nav_wrapper_right = "} ;"
 nav_wrapper_separator = ","
 
-footer_copyright = "© 2024 Creative Data Technologies"
+footer_copyright = "2024 Creative Data Technologies"
 footer_credits = true                 # Whether to show "powered by zola and serene" in footer
 

@@ -32,7 +32,7 @@ endif -%}
 {% endblock head %}
 
 {% block content %}
-<a href="{{ current_path | split(pat='/') | slice(end=-3) | join(sep='/' ) }}" class="back-link">← back to issues</a>
+<a href="{{ current_path | split(pat='/') | slice(end=-2) | join(sep='/' ) }}" class="back-link">← back to issues</a>
 <div id="wrapper">
   <div id="blank"></div>
   <aside>

@@ -39,12 +39,12 @@ lang %}
       </div>
     </section>
     <section id="links">
-      <div id="left">
+      <!-- <div id="left">
         {% for section in config.extra.sections %}
         <a href="{{ get_url(path=section.path) }}" {% if section.is_external %}target="_blank" rel='noreferrer noopener'
           {% else %}class="instant" {% endif %}>{{ section.name }}</a>
         {% endfor %}
-      </div>
+      </div> -->
       <div id="right">
         {% for link in config.extra.links %}
         <a href="{{ link.url }}" aria-label="{{ link.name }}" target="_blank" rel='noreferrer noopener'>
@@ -85,6 +85,24 @@ lang %}
       </div>
     </section>
     {% endif %}
+
+    <div id="left">
+      {% for subsection_path in section.subsections %}
+      {% if subsection_path is matching("magazines.*") %}
+      {% set mags = get_section(path=subsection_path) %}
+      {% for mag_section in mags.subsections %}
+      {% set sub = get_section(path=mag_section) %}
+      <section class="layout-list">
+        <div class="post-entry">
+          <a href="{{ sub.path }}" class="post">
+            <div class="name">{{ sub.title }}</div>
+          </a>
+        </div>
+      </section>
+      {% endfor %}
+      {% endif %}
+      {% endfor %}
+    </div>
   </main>
 </div>
 {% endblock content %}

@@ -17,7 +17,7 @@
                 (Web)
             </a>
             |
-            <a href="{{ page.path }}example.pdf" class="pdf-link">
+            <a href="{{ page.path | trim_end_matches(pat='/') }}.pdf" class="pdf-link">
                 <img src="/icon/pdf.png" alt="PDF version" width="12" height="12">
                 (PDF)
             </a>

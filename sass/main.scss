@@ -1699,3 +1699,17 @@ template {
 [hidden] {
   display: none;
 }
+
+/* backlink
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.back-link {
+  display: block;
+  margin: 2em 2em 1em;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.back-link:hover {
+  color: #000;
+}

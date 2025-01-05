@@ -11,12 +11,20 @@
         {% set sub = get_section(path=subsection_path) %}
         {% for page in sub.pages %}
         <div class="post-entry">
+            {{page.title}} -
             <a href="{{ page.path }}" class="post">
-                <div class="name">{{ page.title }}</div>
+                <img src="/icon/web.png" alt="Web version" width="12" height="12">
+                (Web)
+            </a>
+            |
+            <a href="{{ page.path }}example.pdf" class="pdf-link">
+                <img src="/icon/pdf.png" alt="PDF version" width="12" height="12">
+                (PDF)
             </a>
         </div>
-        {% endfor %}
-        {% endfor %}
-    </main>
+</div>
+{% endfor %}
+{% endfor %}
+</main>
 </div>
 {% endblock content %}

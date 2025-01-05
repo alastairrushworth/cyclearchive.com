@@ -636,7 +636,7 @@ body.homepage {
   }
 
   #info {
-    padding: 0 0px;
+    padding: 0 15px;
     display: flex;
     gap: 1em;
 
@@ -758,7 +758,7 @@ header {
     height: 100%;
     max-width: var(--main-max-width);
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;

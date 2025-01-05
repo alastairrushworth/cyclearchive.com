@@ -1,7 +1,7 @@
 # Basic configuration
 base_url = "https://cyclearchive.com"
 title = "Cycle Archive"
-description = "A blog about cycling, technology, and life."
+description = "A historical archive of cycling magazines and books."
 default_language = "en"
 compile_sass = true
 minify_html = true

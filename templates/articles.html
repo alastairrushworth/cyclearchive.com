@@ -20,9 +20,7 @@
 
         <br>
         <section class="layout-list">
-            {% for subsection_path in section.subsections %}
-            {% set sub = get_section(path=subsection_path) %}
-            {% for page in sub.pages %}
+            {% for page in section.pages %}
             <div class="post-entry">
                 <a href="{{ page.path | trim_end_matches(pat='/') }}.pdf" class="post">
                     <div class="name">
@@ -32,10 +30,9 @@
                 </a>
             </div>
             {% endfor %}
-            {% endfor %}
         </section>
 
-        <br>
+        <!-- <br>
         <section class="layout-list">
             {% for subsection_path in section.subsections %}
             {% set sub = get_section(path=subsection_path) %}
@@ -50,7 +47,7 @@
             </div>
             {% endfor %}
             {% endfor %}
-        </section>
+        </section> -->
 
     </main>
 </div>

@@ -1,30 +1,53 @@
 {% extends "_base.html" %}
 {% block page %}homepage{% endblock page %}
 {% block content %}
-{% include "_header.html" %}
 
 <div id="wrapper">
     <div id="blank"></div>
-    <main class="list">
-        <h1>{{ section.title }}</h1>
-        {% for subsection_path in section.subsections %}
-        {% set sub = get_section(path=subsection_path) %}
-        {% for page in sub.pages %}
-        <div class="post-entry">
-            {{page.title}} -
-            <a href="{{ page.path }}" class="post">
-                <img src="/icon/web.png" alt="Web version" width="12" height="12">
-                (Web)
-            </a>
-            |
-            <a href="{{ page.path | trim_end_matches(pat='/') }}.pdf" class="pdf-link">
-                <img src="/icon/pdf.png" alt="PDF version" width="12" height="12">
-                (PDF)
-            </a>
-        </div>
-</div>
-{% endfor %}
-{% endfor %}
-</main>
+    <main>
+        <section id="info">
+            <div id="text">
+                <div>
+                    <span id="name"><strong>{{ section.title }}</strong></span>
+                </div>
+                <div id="bio"> {{ section.description }} </div>
+            </div>
+        </section>
+
+        <br>
+        <section class="layout-list">
+            {% for subsection_path in section.subsections %}
+            {% set sub = get_section(path=subsection_path) %}
+            {% for page in sub.pages %}
+            <div class="post-entry">
+                <a href="{{ page.path | trim_end_matches(pat='/') }}.pdf" class="post">
+                    <div class="name">
+                        <img src="/icon/pdf.png" alt="PDF version" width="12" height="12">
+                        {{page.title}} - (PDF)
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            {% endfor %}
+        </section>
+
+        <br>
+        <section class="layout-list">
+            {% for subsection_path in section.subsections %}
+            {% set sub = get_section(path=subsection_path) %}
+            {% for page in sub.pages %}
+            <div class="post-entry">
+                <a href="{{ page.path }}" class="post">
+                    <div class="name">
+                        <img src="/icon/web.png" alt="Web version" width="12" height="12">
+                        {{page.title}} - (Web)
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            {% endfor %}
+        </section>
+
+    </main>
 </div>
 {% endblock content %}

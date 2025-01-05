@@ -8,3 +8,7 @@ config.toml
 
 .DS_Store
 conversion.ipynb
+cleaner.py
+example.jpeg
+
+*.pyc

@@ -1,7 +1,7 @@
 
     +++
-    title = "The Bicycling World, Vol 1, No 3"
-    date = "1879-12-13"
+    title = "The Bicycling World, Vol 1, No 4"
+    date = "1879-12-27"
 
     template = "post.html"
 

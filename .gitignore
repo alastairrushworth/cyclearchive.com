@@ -7,7 +7,7 @@ static/hl-dark.css
 config.toml
 
 .DS_Store
-conversion.ipynb
+*.ipynb
 cleaner.py
 example.jpeg
 

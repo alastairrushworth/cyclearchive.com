@@ -12,25 +12,40 @@
         <section id="info">
             <div id="text">
                 <div>
-                    <span id="name"><strong>{{ section.title }}</strong></span>
+                    <span id="name">
+                        <h2>{{ section.title }}</h2>
+                    </span>
                 </div>
                 <div id="bio"> {{ section.description }} </div>
             </div>
         </section>
 
         <br>
+        {% set all_years = [] %}
+        {% for page in section.pages %}
+        {% set year = page.date | date(format="%Y") %}
+        {% if year not in all_years %}
+        {% set_global all_years = all_years | concat(with=year) %}
+        {% endif %}
+        {% endfor %}
+
+        {% for year in all_years | sort %}
         <section class="layout-list">
+            <h3 class="year">{{ year }}</h3>
             {% for page in section.pages %}
+            {% if page.date | date(format="%Y") == year %}
             <div class="post-entry">
                 <a href="{{ page.path | trim_end_matches(pat='/') }}.pdf" class="post">
                     <div class="name">
                         <img src="/icon/pdf.png" alt="PDF version" width="12" height="12">
-                        {{page.title}}. ({{page.date}})
+                        {{page.title}}
                     </div>
                 </a>
             </div>
+            {% endif %}
             {% endfor %}
         </section>
+        {% endfor %}
 
         <!-- <br>
         <section class="layout-list">

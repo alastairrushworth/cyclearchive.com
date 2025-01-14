@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Sitemap: https://cyclearchive.com/sitemap.xml
+
+# Block specific bots if needed
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /

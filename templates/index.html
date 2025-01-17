@@ -84,7 +84,7 @@ lang %}
       {% for subsection_path in section.subsections %}
       {% if subsection_path is matching("magazines.*") %}
       {% set mags = get_section(path=subsection_path) %}
-      {% for mag_section in mags.subsections %}
+      {% for mag_section in mags.subsections | sort %}
       {% set sub = get_section(path=mag_section) %}
       <section class="layout-list">
         <div class="post-entry">

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {%- set magazines = get_section(path="magazines/_index.md") %}
+
+    <url>
+        <loc>https://cyclearchive.com/magazines</loc>
+        <priority>1.0</priority>
+    </url>
+
+    {%- for subsection_path in magazines.subsections %}
+    {%- set magazine = get_section(path=subsection_path) %}
+    <url>
+        <loc>https://cyclearchive.com/{{ magazine.path | trim_end_matches(pat="/") }}</loc>
+        <priority>0.8</priority>
+    </url>
+    
+    {%- for page in magazine.pages %}
+    <url>
+        <loc>https://cyclearchive.com/{{ page.path | trim_end_matches(pat="/") }}.pdf</loc>
+        <priority>0.5</priority>
+    </url>
+    {%- endfor %}
+    {%- endfor %}
+</urlset>

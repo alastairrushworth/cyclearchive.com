@@ -50,6 +50,7 @@ recent_more_text = "more »"
 sections = [
     { name = "magazines", path = "/magazines", is_external = false },
     { name = "about", path = "/about", is_external = false },
+    { name = "links", path = "/links", is_external = false }
 ]
 blog_section_path = "/magazines"
 

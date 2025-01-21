@@ -1,6 +1,6 @@
 +++
-title = "About me"
-description = "A about page of ..."
+title = "Links"
+description = "Links to other cycling projects on the wen"
 template = "prose.html"
 insert_anchor_links = "none"
 
@@ -13,4 +13,4 @@ comment = false
 reaction = false
 +++
 
-test
+example

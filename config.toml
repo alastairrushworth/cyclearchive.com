@@ -54,6 +54,12 @@ sections = [
 ]
 blog_section_path = "/magazines"
 
+links = [
+    #{ name = "GitHub", icon = "github", url = "https://github.com/<your-username>" },
+    #{ name = "Twitter", icon = "twitter", url = "https://twitter.com/<your-username>" },
+    #{ name = "Email", icon = "email", url = "mailto:<your-email-address>" },
+]
+
 force_theme = "light"                  # false | "light" | "dark"
 blog_categorized = true               # Whether to categorize blog posts
 blur_effect = false                   # Whether to turn on blur effect on navigation bar

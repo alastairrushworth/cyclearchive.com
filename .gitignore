@@ -4,11 +4,11 @@ archive/*
 public/
 static/hl-light.css
 static/hl-dark.css
-config.toml
 
 .DS_Store
+.env
+
 *.ipynb
-cleaner.py
 example.jpeg
 
 *.pyc
